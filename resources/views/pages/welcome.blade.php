@@ -22,7 +22,7 @@
                     <h3>{{ $post->title }}</h3>
                     @if ($post->image === null) 
                     @else 
-                        <img src="{{ asset('images/' . $post->image) }}" width="200" height="200"/>
+                        <img src="{{ asset('images/' . $post->image) }}" width="748" height="400"/>
                     @endif
                     <p>{{ substr(strip_tags($post->body), 0, 300) }}{{ strlen(strip_tags($post->body)) > 300 ? "..." : "" }}</p>
                     <a href="{{ url('blog/'.$post->slug) }}" class="btn btn-primary">Read More</a>
