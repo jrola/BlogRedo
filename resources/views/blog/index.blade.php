@@ -22,7 +22,7 @@
             @endif
 			<p>{{ substr(strip_tags($post->body), 0, 250) }}{{ strlen(strip_tags($post->body)) > 250 ? '...' : "" }}</p>
 
-			<a href="{{ route('blog.single', $post->slug) }}" class="btn btn-primary">Read More</a>
+			<a href="{{ route('blog.single', $post->slug) }}" class="btn btn-primary">Read More<span class="glyphicon glyphicon-chevron-right"></span></a>
 			<hr>
 		</div>
 	</div>
