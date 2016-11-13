@@ -1,3 +1,9 @@
+
+body
+{
+	background-color: #FCFCFC;
+}
+
 .btn-h1-spacing 
 {
 	margin-top: 18px;
@@ -30,7 +36,6 @@
 .author-name>h4 
 {
 	margin: 5px 0px;
-
 }
 
 .author-time 
@@ -58,36 +63,69 @@
 	margin-right: 15px;
 }
 
-.jumbotron
-{
-	color: white;
-	text-shadow: 1px 1px #000;
-	background: url("/images/keyboard.jpg");
-	background-size: 100% 100%;
-	height: 350px;
-}
-
 .navbar
 { 
 	font-family: "Raleway", Sans-serif;
-    -webkit-font-smoothing: antialiased;    
+    -webkit-font-smoothing: antialiased;  
+    border-radius: 0px;  
 }
 
 .post
 {
 	border: 1px solid #dadada;
-
 }
 
-.postBorder
+.postImage
 {
-	border: 1px solid  #eee;
+	width: 100%;
+}
+
+.postContainer
+{
+	border: 1px solid #e3e3e3;
 	margin-bottom: 30px;
 	padding: 20px;
+	box-shadow: 2px 2px 2px rgba(0,0,0,0.1);
+	background-color: #fff;
 }
 
-.postBorder, a
+.postContainer, h2
+{
+	margin-top: 0px;
+}
+
+.postContainer, p
+{
+	color: #777;
+	margin-top: 10px;
+}
+
+.postContainer, a
 {
 	color: #000;
 }
 
+.post-header 
+{
+    border: 1px solid #d2d2d2;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    background: #eee;
+    padding: 5px 10px;
+}
+
+.blogimage
+{
+	width: 30%;	
+}
+
+.blogImageSingle{ width: 100%; }
+
+ .margin10{ margin-right:10px; }
+
+ .well
+ {
+ 	background-color: #fff;
+ 	box-shadow: 2px 2px 2px rgba(0,0,0,0.1);
+ }
+ 

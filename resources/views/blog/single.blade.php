@@ -5,12 +5,16 @@
 @section('content')
 
 	<div class="row">
-		<div class="col-md-8 col-md-offset-2">
+		<div class="col-md-10 col-md-offset-1 postContainer">
+			<h2>{{ $post->title }}</h1>
+			<p>
+             	<span class="glyphicon glyphicon-time"></span> Published: {{ date('M j, Y g:i a', strtotime($post->created_at)) }}
+             </p>
 			@if ($post->image === null) 
 			@else 
-				<img src="{{ asset('images/' . $post->image) }}" width="800" height="400"/>
+				<img src="{{ asset('images/' . $post->image) }}" class="blogImageSingle" />
 			@endif
-			<h1>{{ $post->title }}</h1>
+			
 			<p>{!! $post->body !!}</p>
 			<hr>
 			<p>Posted In: {{ $post->category->name }}</p>
@@ -19,7 +23,7 @@
 
 	<div class="row">
 		<div class="col-md-8 col-md-offset-2">
-			<h3 class="comments-title"><span class="glyphicon glyphicon-comment"></span>  {{ $post->comments()->count() }} Comments</h3>
+			<h3 class="comments-title"><span class="glyphicon glyphicon-comment"></span> {{ $post->comments()->count() }} Comments</h3>
 			@foreach($post->comments as $comment)
 				<div class="comment">
 					<div class="author-info">
@@ -58,7 +62,7 @@
 
 					<div class="col-md-12">
 						{{ Form::label('comment', "Comment:") }}
-						{{ Form::textarea('comment', null, ['class' => 'form-control', 'rows' => '5']) }}
+						{{ Form::textarea('comment', null, ['class' => 'form-control', 'rows' => '4']) }}
 
 						{{ Form::submit('Add Comment', ['class' => 'btn btn-success btn-block', 'style' => 'margin-top:15px;']) }}
 					</div>
