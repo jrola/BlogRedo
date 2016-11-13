@@ -15,16 +15,15 @@
                         <a href="{{ route('blog.single', $post->slug) }}">{{ $post->title }}</a>
                     </h2>
 
-                    <p>
-                        <span class="glyphicon glyphicon-time"></span> Published: {{ date('M j, Y g:i a', strtotime($post->created_at)) }}
-                    </p>
+                    <p class="post-comments-title"><span class="glyphicon glyphicon-comment"></span> {{ $post->comments()->count() }} Comments</p>
+
+                    <p><span class="glyphicon glyphicon-time"></span> Published: {{ date('M j, Y g:i a', strtotime($post->created_at)) }}</p>
 
                     @if ($post->image === null) 
                     @else 
                         <img class="img-responsive" src="{{ asset('images/' . $post->image) }}" width="900" height="300"/>
                     @endif
                     
-                   
                     <p>{{ substr(strip_tags($post->body), 0, 300) }}{{ strlen(strip_tags($post->body)) > 300 ? "..." : "" }}</p>
 
                     <a href="{{ url('blog/'.$post->slug) }}" class="btn btn-primary">Read More<span class="glyphicon glyphicon-chevron-right"></span></a>

@@ -63,6 +63,20 @@ body
 	margin-right: 15px;
 }
 
+
+.post-comments-title 
+{
+	margin-top: 0px;
+	float: right;
+}
+
+.post-comments-title>span 
+{
+	margin-left: 10px;
+}
+
+
+
 .navbar
 { 
 	font-family: "Raleway", Sans-serif;
