@@ -6,7 +6,7 @@
 
 	<div class="row">
 		<div class="col-md-10 col-md-offset-1 postContainer">
-			<h2>{{ $post->title }}</h1>
+			<h2>{{ $post->title }}</h2>
 			<p>
              	<span class="glyphicon glyphicon-time"></span> Published: {{ date('M j, Y g:i a', strtotime($post->created_at)) }}
              </p>
