@@ -4,7 +4,11 @@
 
 @section('content')
 
-    
+    <div class="jumbotron">
+        <h1>Welcome to my blog</h1>
+        <p>Check out the latest posts</p>
+    </div>
+
     <div class="row">
         <div class="col-md-8">
             <h2 class="page-header">Featured Posts</h2>
@@ -87,6 +91,6 @@
         </div>
     </div>
 
+ <a href="/blog" class="btn btn-success btn-block">View More Posts<span class="glyphicon glyphicon-chevron-right"></span></a>
 
-
-@stop
+@endsection

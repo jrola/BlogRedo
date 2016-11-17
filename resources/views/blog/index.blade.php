@@ -4,19 +4,20 @@
 
 @section('content')
 
-	<div class="col-md-12">
+	<div class="col-md-12 form-spacing-top ">
 		<div class="row">
+		
 			@foreach ($posts as $post)
 
 	        	@if ($post->image === null) 
 				@else 
-					<img src="{{ asset('images/' . $post->image) }}" class="pull-left margin10 img-thumbnail blogimage" />
+					<a href="{{ route('blog.single', $post->slug) }}"><img src="{{ asset('images/' . $post->image) }}" class="pull-left margin10 img-thumbnail blogimage" /></a>
 				@endif
 
-				<h2>{{ $post->title }}</h2>
+				<h2><a href="{{ route('blog.single', $post->slug) }}">{{ $post->title }}</a></h2>
 	        	<p><span class="glyphicon glyphicon-time"></span> Published: {{ date('M j, Y g:i a', strtotime($post->created_at)) }}</p>
 
-	        	<p><span class="glyphicon glyphicon-comment"></span> {{ $post->comments()->count() }} Comments</p>
+	        	<a href="{{ route('blog.single', $post->slug) }}"><p><span class="glyphicon glyphicon-comment"></span> {{ $post->comments()->count() }} Comments</p></a>
 				<p>{{ substr(strip_tags($post->body), 0, 250) }}{{ strlen(strip_tags($post->body)) > 250 ? '...' : "" }}</p>
 
 	        	<div>
