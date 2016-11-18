@@ -2,13 +2,15 @@
 
 @section('title', '| Homepage')
 
+
+@section('jumbotron')
+
+    <div class="jumbotron"></div>
+
+@endsection
+
 @section('content')
-
-    <div class="jumbotron">
-        <h1>Welcome to my blog</h1>
-        <p>Check out the latest posts</p>
-    </div>
-
+    
     <div class="row">
         <div class="col-md-8">
             <h2 class="page-header">Featured Posts</h2>
@@ -40,14 +42,16 @@
         <h2 class="page-header">Popular Articles</h2>
             <div class="well">
                 <h4>Blog Search</h4>
+                {!! Form::open(['method' => 'GET', 'url' => 'blog', 'role' => 'search' , 'class' => 'form-control']) !!}
                 <div class="input-group">
-                    <input type="text" class="form-control">
+                    
                     <span class="input-group-btn">
                         <button class="btn btn-default" type="button">
                             <span class="glyphicon glyphicon-search"></span>
                         </button>
                     </span>
                 </div>
+                {!! Form::close() !!}
             </div>
 
             <div class="well">

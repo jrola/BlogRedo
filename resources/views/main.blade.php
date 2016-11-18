@@ -6,7 +6,9 @@
   
   <body>
 
-    @include('partials._nav')    
+    @include('partials._nav')  
+
+    @yield('jumbotron')  
 
     <div class="container">
     
