@@ -40,7 +40,7 @@ Route::group(['middleware' => ['web']], function ()
 	Route::post('password/reset', 'Auth\PasswordController@reset');
 
 	// Categories
-	Route::resource('categories', 'CategoryController', ['except' => ['create']]);
+	Route::resource('categories', 'CategoryController', ['except' => ['create']]);	
 	Route::resource('tags', 'TagController', ['except' => ['create']]);
 
 	// Comments
@@ -57,5 +57,10 @@ Route::group(['middleware' => ['web']], function ()
 	Route::get('about', 'PagesController@getAbout');
 	Route::get('/', 'PagesController@getIndex');
 	Route::resource('posts', 'PostController');
+
+	Route::post('queries', ['uses' => 'QueryController@search', 'as' => 'queries.search']);
+	Route::get('queries', ['uses' => 'QueryController@search', 'as' => 'queries.search']);
+	
+
 });
 

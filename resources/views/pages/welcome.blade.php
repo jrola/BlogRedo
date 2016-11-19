@@ -41,20 +41,6 @@
         <div class="col-md-4">
         <h2 class="page-header">Popular Articles</h2>
             <div class="well">
-                <h4>Blog Search</h4>
-                {!! Form::open(['method' => 'GET', 'url' => 'blog', 'role' => 'search' , 'class' => 'form-control']) !!}
-                <div class="input-group">
-                    
-                    <span class="input-group-btn">
-                        <button class="btn btn-default" type="button">
-                            <span class="glyphicon glyphicon-search"></span>
-                        </button>
-                    </span>
-                </div>
-                {!! Form::close() !!}
-            </div>
-
-            <div class="well">
                 <h4>Blog Categories</h4>
                 <div class="row">
                     <div class="col-lg-6">

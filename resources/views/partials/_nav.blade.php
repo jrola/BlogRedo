@@ -20,7 +20,8 @@
         <li class="{{ Request::is('about') ? "active" : "" }}"><a href="/about">About</a></li>
         <li class="{{ Request::is('contact') ? "active" : "" }}"><a href="/contact">Contact</a></li>
       </ul>
-      <ul class="nav navbar-nav navbar-right">
+
+      <ul class="nav navbar-nav navbar-right loginBtn">
         @if (Auth::check())
 
         <li class="dropdown">
@@ -41,6 +42,14 @@
         @endif
 
       </ul>
+
+      {!! Form::open(array('route' => 'queries.search', 'class'=>'navbar-form navbar-left')) !!}
+
+        {!! Form::text('search', null, array('required', 'class'=>'form-control', 'placeholder'=>'Search for...')) !!}
+        {!! Form::submit('Search',array('class'=>'btn btn-success ')) !!}
+
+      {!! Form::close() !!}
+
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
