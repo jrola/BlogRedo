@@ -5,12 +5,26 @@
 
 @section('jumbotron')
 
-    <div class="jumbotron"></div>
+    <div class="jumbotron">
+        <h2 class="text-center">Welcome to my blog</h2>
+        <p class="text-center">This is the place to be</p>
+    </div>
 
 @endsection
 
 @section('content')
-    
+
+    <div class="row">
+        <div class="col-md-12">
+            {!! Form::open(array('route' => 'queries.search', 'class'=>'navbar-form')) !!}
+
+                {!! Form::text('search', null, array('required', 'class'=>'form-control', 'placeholder'=>'Search for...')) !!}
+                {!! Form::submit('Search',array('class'=>'btn btn-primary ')) !!}
+
+            {!! Form::close() !!}
+        </div>
+    </div>
+
     <div class="row">
         <div class="col-md-8">
             <h2 class="page-header">Featured Posts</h2>
@@ -25,10 +39,12 @@
 
                     <p><span class="glyphicon glyphicon-time"></span> Published: {{ date('M j, Y g:i a', strtotime($post->created_at)) }}</p>
 
+                    <a href="{{ route('blog.single', $post->slug) }}">
                     @if ($post->image === null) 
                     @else 
                         <img class="img-responsive" src="{{ asset('images/' . $post->image) }}" width="900" height="300"/>
                     @endif
+                    </a>
                     
                     <p>{{ substr(strip_tags($post->body), 0, 300) }}{{ strlen(strip_tags($post->body)) > 300 ? "..." : "" }}</p>
 

@@ -13,7 +13,7 @@
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    <div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li class="{{ Request::is('/') ? "active" : "" }}"><a href="/">Home</a></li>
         <li class="{{ Request::is('blog') ? "active" : "" }}"><a href="/blog">Blog</a></li>
@@ -42,13 +42,6 @@
         @endif
 
       </ul>
-
-      {!! Form::open(array('route' => 'queries.search', 'class'=>'navbar-form navbar-left')) !!}
-
-        {!! Form::text('search', null, array('required', 'class'=>'form-control', 'placeholder'=>'Search for...')) !!}
-        {!! Form::submit('Search',array('class'=>'btn btn-success ')) !!}
-
-      {!! Form::close() !!}
 
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
