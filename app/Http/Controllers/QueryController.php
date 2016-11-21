@@ -14,6 +14,9 @@ class QueryController extends Controller
     	// Gets the query string from our form submission 
     	$query = $request->input('search');
 
+
+    	$this->validate($request, array( 'search' => 'required'));
+
     	$posts = DB::table('posts')->where('title', 'LIKE', '%' . $query . '%')
     							   ->orWhere('body', 'LIKE', '%' . $query . '%')
     							   ->paginate(10);
