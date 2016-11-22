@@ -97,6 +97,6 @@
         </div>
     </div>
 
- <a href="/blog" class="btn btn-success btn-block">View More Posts<span class="glyphicon glyphicon-chevron-right"></span></a>
+ <a href="/blog" class="btn btn-success btn-block btnMorePosts">View More Posts<span class="glyphicon glyphicon-chevron-right"></span></a>
 
 @endsection

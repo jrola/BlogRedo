@@ -80,7 +80,10 @@ body
 	margin-left: 10px;
 }
 
-
+.btnMorePosts
+{
+	padding: 15px 0px 15px 0px;
+}
 
 .navbar
 { 
