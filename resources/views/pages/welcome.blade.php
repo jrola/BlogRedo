@@ -18,7 +18,7 @@
         <div class="col-md-12">
             {!! Form::open(array('route' => 'queries.search', 'class'=>'navbar-form')) !!}
 
-                {!! Form::text('search', null, array('required', 'class'=>'form-control', 'placeholder'=>'Search for...')) !!}
+                {!! Form::text('search', null, array('required', 'class'=>'form-control searchForm', 'placeholder'=> 'SEARCH THE FORUM...')) !!}
                 {!! Form::submit('Search',array('class'=>'btn btn-primary ')) !!}
 
             {!! Form::close() !!}
@@ -48,7 +48,7 @@
                     
                     <p>{{ substr(strip_tags($post->body), 0, 300) }}{{ strlen(strip_tags($post->body)) > 300 ? "..." : "" }}</p>
 
-                    <a href="{{ url('blog/'.$post->slug) }}" class="btn btn-primary">Read More<span class="glyphicon glyphicon-chevron-right"></span></a>
+                    <a href="{{ url('blog/'.$post->slug) }}" class="btn btn-primary">Read More</a>
             
                 </div>
             @endforeach
@@ -79,12 +79,13 @@
 
             <!-- Side Widget Well -->
             <div class="well">
-                <h4>Side Widget Well</h4>
+                <h4>Categories</h4>
+                <hr>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore, perspiciatis adipisci accusamus laudantium odit aliquam repellat tempore quos aspernatur vero.</p>
             </div>
         </div>
     </div>
 
- <a href="/blog" class="btn btn-success btn-block btnMorePosts">View More Posts<span class="glyphicon glyphicon-chevron-right"></span></a>
+ <a href="/blog" class="btn btn-default btn-block btnMorePosts">View More Posts</a>
 
 @endsection

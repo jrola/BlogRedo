@@ -24,7 +24,7 @@
 
 	        	<div>
 	        		<div class="blogbtn"> 
-	        			<a href="{{ route('blog.single', $post->slug) }}" class="btn btn-primary">Read More<span class="glyphicon glyphicon-chevron-right"></span></a> 
+	        			<a href="{{ route('blog.single', $post->slug) }}" class="btn btn-primary">Read More</a> 
 	        		</div>  
 	        	</div> 
 
