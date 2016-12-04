@@ -1,4 +1,3 @@
-       
 <footer class="footer-bs">
    <div class="row">
         <nav class="navbar-inverse">
