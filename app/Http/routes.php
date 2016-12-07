@@ -60,6 +60,8 @@ Route::group(['middleware' => ['web']], function ()
 
 	Route::post('queries', ['uses' => 'QueryController@search', 'as' => 'queries.search']);
 	Route::get('queries', ['uses' => 'QueryController@search', 'as' => 'queries.search']);
+
+	Route::get('catList/{id}', ['uses' => 'PagesController@displayCat', 'as' => 'catLists']);
 	
 
 });
