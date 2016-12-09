@@ -63,6 +63,7 @@ Route::group(['middleware' => ['web']], function ()
 
 	Route::get('catList/{id}', ['uses' => 'PagesController@displayCat', 'as' => 'catLists']);
 	
+	Route::get('tagList/{id}', ['uses' => 'PagesController@displayTag', 'as' => 'tagLists']);
 
 });
 

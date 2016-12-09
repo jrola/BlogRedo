@@ -11,7 +11,8 @@ hr
 
 .btn-default
 {
-	border: 2px solid #0ea6f2;
+	border-radius: 0px;
+	box-shadow: 2px 2px 2px rgba(0,0,0,0.1);
 	color: #0ea6f2;
 	font-weight: 700;
  
@@ -170,6 +171,8 @@ hr
 
 .btn-primary
 {
+	border-radius: 0px;
+	box-shadow: 2px 2px 2px rgba(0,0,0,0.1);
 	background-color: #0ea6f2;
 	color: #fff;
 	border: none;

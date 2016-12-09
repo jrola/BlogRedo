@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Post;
 use App\Category;
+use App\Tag;
 use Mail;
 use Session;
 
@@ -17,11 +18,13 @@ class PagesController extends Controller {
 		$posts = Post::orderBy('created_at', 'desc')->limit(4)->get();
 		$popularPosts = Post::orderBy('created_at', 'desc')->limit(6)->get();
 		$displayCategory = Category::all();
+		$tags = Tag::all();
 
 		$data = [];
 		$data['posts'] = $posts;
 		$data['popularPosts'] = $popularPosts;
 		$data['displayCategory'] = $displayCategory;
+		$data['tags'] = $tags;
 
 		return view('pages.welcome')->withData($data);
 	}
@@ -71,6 +74,15 @@ class PagesController extends Controller {
 	public function displayCat($id)
 	{
 		$category = Category::find($id);
+
+		$posts = Post::where('category_id', '=', $id)->orderBy('created_at', 'desc')->paginate(10);
+								  
+    	return view('blog.displayCategory', compact('posts', 'category'));
+	}
+
+	public function displayTag($id)
+	{
+		$tag = tag::find($id);
 
 		$posts = Post::where('category_id', '=', $id)->orderBy('created_at', 'desc')->paginate(10);
 								  

@@ -85,9 +85,17 @@
                     <p><a href="{{ route('catLists', $category->id) }}">{{ $category->name }}</a></p>
                 @endforeach
             </div>
+
+            <div class="well">
+                <h4>Tags</h4>
+                <hr>
+                @foreach ($data['tags'] as $tag)
+                    <a href="{{ route('tagLists', $tag->id) }}"><p class="label label-default">{{ $tag->name }}</p></a>
+                @endforeach
+            </div>
         </div>
     </div>
 
- <a href="/blog" class="btn btn-default btn-block btnMorePosts">View More Posts</a>
+ <a href="/blog" class="btn btn-default btn-block btnMorePosts">View All Posts >></a>
 
 @endsection
