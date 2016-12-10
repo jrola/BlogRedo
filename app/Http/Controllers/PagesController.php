@@ -80,12 +80,9 @@ class PagesController extends Controller {
     	return view('blog.displayCategory', compact('posts', 'category'));
 	}
 
-	public function displayTag($id)
-	{
-		$tag = tag::find($id);
-
-		$posts = Post::where('category_id', '=', $id)->orderBy('created_at', 'desc')->paginate(10);
-								  
-    	return view('blog.displayCategory', compact('posts', 'category'));
-	}
+    public function displayTag($id)
+    {
+        $tag = Tag::find($id);
+        return view('blog.displayTag')->withTag($tag);
+    }
 }
