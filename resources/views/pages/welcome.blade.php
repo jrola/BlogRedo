@@ -90,7 +90,7 @@
                 <h4>Tags</h4>
                 <hr>
                 @foreach ($data['tags'] as $tag)
-                    <a href="{{ route('tagLists', $tag->id) }}"><p class="label label-default">{{ $tag->name }}</p></a>
+                    <a class="label label-default" href="{{ route('tagLists', $tag->id) }}">{{ $tag->name }}</a>
                 @endforeach
             </div>
         </div>
