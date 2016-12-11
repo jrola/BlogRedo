@@ -19,18 +19,16 @@
 return [
     'encoding'      => 'UTF-8',
     'finalize'      => true,
-    'preload'  => false,
     'cachePath'     => storage_path('app/purifier'),
     'cacheFileMode' => 0755,
     'settings'      => [
         'default' => [
-            'HTML.Doctype'             => 'XHTML 1.0 Transitional',
-            'HTML.Allowed'             => 'iframe[src|width|height|class|frameborder],div,b,strong,i,em,a[href|title],ul,ol,li,p[style],br,span[style],img[width|height|alt|src],h1,h2,h3,h4,h5,h6',
+            'HTML.Doctype'             => 'XHTML 1.0 Strict',
+            'HTML.Allowed'             => 'div,b,strong,i,em,a[href|title],ul,ol,li,p[style],br,span[style],img[width|height|alt|src],h1,h2,h3,h4,h5,h6',
             'CSS.AllowedProperties'    => 'font,font-size,font-weight,font-style,font-family,text-decoration,padding-left,color,background-color,text-align',
             'AutoFormat.AutoParagraph' => true,
             'AutoFormat.RemoveEmpty'   => true,
-            "HTML.SafeIframe"          => true,
-            "URI.SafeIframeRegexp"     => "%^(http://|https://|//)(www.youtube.com/embed/|player.vimeo.com/video/|api.soundcloud.com/tracks/)%"
+            'Filter.YouTube' => true,
         ],
         'test'    => [
             'Attr.EnableID' => true
@@ -40,5 +38,4 @@ return [
             "URI.SafeIframeRegexp" => "%^(http://|https://|//)(www.youtube.com/embed/|player.vimeo.com/video/)%",
         ],
     ],
-
 ];
