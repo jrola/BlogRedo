@@ -20,8 +20,9 @@ hr
 
 .searchForm
 {
-	font-size: 17px;
-	font-weight: 700;
+	font-size: 15px;
+	font-weight: 500;
+	border-radius: 0px;
 }
 
 .btn-h1-spacing 
@@ -159,7 +160,7 @@ hr
 .navbar-form .form-control
 {
 	width: 80%;
-	padding: 25px 10px 25px 10px;
+	padding: 24px 10px 24px 10px;
 	
 }
 .navbar-form .btn
@@ -231,18 +232,18 @@ hr
 
 .blogImageSingle{ width: 100%; }
 
- .margin10{ margin-right: 15px; }
+.margin10{ margin-right: 15px; }
 
- .well
- {
+.well
+{
  	background-color: #fff;
  	box-shadow: 2px 2px 2px rgba(0,0,0,0.1);
- }
+}
 
 
 .blogbtn { float:right; }	
 
- .clear { clear:both; }
+.clear { clear:both; }
 
 
  .jumbotron

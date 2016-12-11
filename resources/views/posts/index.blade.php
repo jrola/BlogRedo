@@ -10,7 +10,7 @@
 		</div>
 
 		<div class="col-md-2">
-			<a href="{{ route('posts.create') }}" class="btn btn-lg btn-block btn-primary btn-h1-spacing">Create New Post</a>
+			<a href="{{ route('posts.create') }}" class="btn btn-block btn-primary btn-h1-spacing">Create New Post</a>
 		</div>
 		<div class="col-md-12">
 			<hr>
@@ -34,8 +34,8 @@
 
 						<tr>
 							<th>{{ $post->id }}</th>
-							<td>{{ $post->title }}</td>
-							<td>{{ substr(strip_tags($post->body), 0, 50) }}{{ strlen(strip_tags($post->body)) > 50 ? "..." : "" }}</td>
+							<td>{{ substr(strip_tags($post->title),0, 60) }}{{ strlen(strip_tags($post->title)) > 60 ? "..." : "" }}</td>
+							<td>{{ substr(strip_tags($post->body), 0, 60) }}{{ strlen(strip_tags($post->body)) > 60 ? "..." : "" }}</td>
 							<td>{{ date('M j, Y', strtotime($post->created_at)) }}</td>
 							<td><a href="{{ route('posts.show', $post->id) }}" class="btn btn-default btn-sm">View</a> <a href="{{ route('posts.edit', $post->id) }}" class="btn btn-default btn-sm">Edit</a></td>
 						</tr>
