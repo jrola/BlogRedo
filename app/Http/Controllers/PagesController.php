@@ -16,9 +16,10 @@ class PagesController extends Controller {
 	public function getIndex() 
 	{
 		$posts = Post::orderBy('created_at', 'desc')->limit(4)->get();
-		$popularPosts = Post::orderBy('created_at', 'desc')->limit(6)->get();
+		$popularPosts = Post::orderBy('view_count', 'desc')->limit(5)->get();
 		$displayCategory = Category::all();
 		$tags = Tag::all();
+
 
 		$data = [];
 		$data['posts'] = $posts;
@@ -86,3 +87,6 @@ class PagesController extends Controller {
         return view('blog.displayTag')->withTag($tag);
     }
 }
+
+
+

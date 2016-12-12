@@ -48,7 +48,7 @@
                     
                     <p>{{ substr(strip_tags($post->body), 0, 300) }}{{ strlen(strip_tags($post->body)) > 300 ? "..." : "" }}</p>
 
-                    <a href="{{ url('blog/'.$post->slug) }}" class="btn btn-primary">Read More</a>
+                    <a href="{{ route('blog.single', $post->slug) }}" class="btn btn-primary">Read More</a>
             
                 </div>
             @endforeach
@@ -71,7 +71,7 @@
                                     <img class="img-responsive" src="{{ asset('images/' . $post->image) }}"/>
                                 @endif
                             </a>
-                 
+                        
                         @endforeach
                     </div>  
                 </div>
