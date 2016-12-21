@@ -2,6 +2,12 @@
 <?php $titleTag = htmlspecialchars($post->title); ?>
 @section('title', "| $titleTag")
 
+@section('stylesheets')
+
+    {!! Html::style('css/parsley.css') !!}
+
+@endsection
+
 @section('content')
 
 	<div class="row">
@@ -47,19 +53,19 @@
 
 	<div class="row">
 		<div id="comment-form" class="col-md-8 col-md-offset-2" style="margin-top: 50px;">
-			{{ Form::open(['route' => ['comments.store', $post->id], 'method' => 'POST']) }}
+			{{ Form::open(['route' => ['comments.store', $post->id], 'method' => 'POST', 'data-parsley-validate' => '',]) }}
 				<div class="row">
 					<h4>Leave a comment</h4>
 					<div class="form-group">
-						{{ Form::text('name', null, ['class' => 'form-control', 'placeholder' => 'Enter Name']) }}
+						{{ Form::text('name', null, ['class' => 'form-control', 'placeholder' => 'Enter Name', 'required' => '']) }}
 					</div>
 
 					<div class="form-group">
-						{{ Form::text('email', null, ['class' => 'form-control ', 'placeholder' => 'Enter Email']) }}
+						{{ Form::text('email', null, ['class' => 'form-control', 'placeholder' => 'Enter Email', 'required' => '', 'data-parsley-type' => 'email']) }}
 					</div>
 
 					<div class="form-group">
-						{{ Form::textarea('comment', null, ['class' => 'form-control ', 'rows' => '5', 'placeholder' => 'Message']) }}
+						{{ Form::textarea('comment', null, ['class' => 'form-control', 'rows' => '5', 'placeholder' => 'Message', 'required' => '']) }}
 
 						{{ Form::submit('Post Comment', ['class' => 'btn btn-success', 'style' => 'margin-top:15px;']) }}
 					</div>
@@ -68,5 +74,16 @@
 			{{ Form::close() }}
 		</div>
 	</div>
+
+@endsection
+
+@section('scripts')
+
+    {!! Html::script('js/parsley.min.js') !!}
+    {!! Html::script('js/select2.min.js') !!}
+
+    <script type="text/javascript">
+        $('.select2-multi').select2();
+    </script>
 
 @endsection

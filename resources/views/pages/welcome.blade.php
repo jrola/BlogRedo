@@ -2,6 +2,11 @@
 
 @section('title', '| Homepage')
 
+@section('stylesheets')
+
+    {!! Html::style('css/parsley.css') !!}
+
+@endsection
 
 @section('jumbotron')
 
@@ -16,10 +21,10 @@
 
     <div class="row">
         <div class="col-md-12">
-            {!! Form::open(array('route' => 'queries.search', 'class'=>'navbar-form')) !!}
+            {!! Form::open(array('route' => 'queries.search', 'data-parsley-validate' => '', 'class'=>'navbar-form')) !!}
 
                 {!! Form::text('search', null, array('required', 'class'=>'form-control searchForm', 'placeholder'=> 'SEARCH THE FORUM...')) !!}
-                {!! Form::submit('Search',array('class'=>'btn btn-primary ')) !!}
+                {!! Form::submit('Search',array('class'=>'btn btn-primary', 'required' => '')) !!}
 
             {!! Form::close() !!}
         </div>
@@ -97,5 +102,16 @@
     </div>
 
  <a href="/blog" class="btn btn-default btn-block btnMorePosts">View All Posts >></a>
+
+@endsection
+
+@section('scripts')
+
+    {!! Html::script('js/parsley.min.js') !!}
+    {!! Html::script('js/select2.min.js') !!}
+
+    <script type="text/javascript">
+        $('.select2-multi').select2();
+    </script>
 
 @endsection

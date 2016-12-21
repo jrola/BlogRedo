@@ -48,10 +48,10 @@
 				{{ Form::label('title', 'Title:') }}
 				{{ Form::text('title', null, array('class' => 'form-control', 'required' => '', 'maxlength' => '255')) }}
 
-				{{ Form::label('slug', 'Slug:') }}
+				{{ Form::label('slug', 'Slug:', ['class' => 'marginTop']) }}
 				{{ Form::text('slug', null, array('class' => 'form-control', 'required' => '', 'minlength' => '5', 'maxlength' => '255') ) }}
 
-				{{ Form::label('category_id', 'Category:') }}
+				{{ Form::label('category_id', 'Category:', ['class' => 'marginTop']) }}
 				<select class="form-control" name="category_id">
 					@foreach($categories as $category)
 						<option value='{{ $category->id }}'>{{ $category->name }}</option>
@@ -60,7 +60,7 @@
 				</select>
 
 
-				{{ Form::label('tags', 'Tags:') }}
+				{{ Form::label('tags', 'Tags:', ['class' => 'marginTop']) }}
 				<select class="form-control select2-multi" name="tags[]" multiple="multiple">
 					@foreach($tags as $tag)
 						<option value='{{ $tag->id }}'>{{ $tag->name }}</option>
@@ -68,7 +68,7 @@
 
 				</select>
 
-				{{ Form::label('featured_image', 'Upload a Featured Image') }}
+				{{ Form::label('featured_image', 'Upload a Featured Image', ['class' => 'marginTop']) }}
 				{{ Form::file('featured_image') }}
 
 				{{ Form::label('body', "Post Body:") }}

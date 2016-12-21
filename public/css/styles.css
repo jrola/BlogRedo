@@ -37,7 +37,7 @@ hr
 
 .form-spacing-top 
 {
-	margin-top: 30px;
+	margin-top: 10px;
 }
 
 .comment 
@@ -275,9 +275,9 @@ hr
 	margin-top: 30px;
 }
 
-iframe
+.marginTop
 {
-	margin-bottom: 20px;
+	margin-top: 15px;
 }
 
 .login
