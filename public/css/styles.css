@@ -285,3 +285,21 @@ hr
 	margin: 26% 0 26% 0;
 }
 
+
+  .fb-share-button
+{
+transform: scale(1.7);
+-ms-transform: scale(1.7);
+-webkit-transform: scale(1.7);
+-o-transform: scale(1.7);
+-moz-transform: scale(1.7);
+transform-origin: top left;
+-ms-transform-origin: top left;
+-webkit-transform-origin: top left;
+-moz-transform-origin: top left;
+-webkit-transform-origin: top left;
+float: right;
+margin-right: 40px;
+margin-top: -35px;
+}
+
