@@ -9,6 +9,14 @@ hr
 	border-bottom: 1px solid #e3e3e3;
 }
 
+.categoryList hr 
+{
+	border: 0;
+    height: 1px;
+    background: #F8F8F8;
+    margin-top: -5px;
+}
+
 .btn-default
 {
 	border-radius: 0px;

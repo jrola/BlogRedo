@@ -41,7 +41,7 @@
 						<img class="author-image" src="{{ "https://www.gravatar.com/avatar/" . md5(strtolower(trim($comment->email))) . "?s=50&d=retro" }}">
 						<div class="author-name">
 							<p>By<span style="color:#0ea6f2;"> {{ $comment->name }}</span><span class="commentSpan">|</span>
-							{{ date('F dS, Y - g:iA' ,strtotime($comment->created_at)) }}</p>
+							{{ date('F d, Y - g:iA' ,strtotime($comment->created_at)) }}</p>
 						</div>
 
 					</div>

@@ -86,9 +86,12 @@
             <div class="well">
                 <h4>Categories</h4>
                 <hr>
-                @foreach($data['displayCategory'] as $category)
-                    <p><a href="{{ route('catLists', $category->id) }}">{{ $category->name }}</a></p>
-                @endforeach
+                <div class="categoryList">
+                    @foreach($data['displayCategory'] as $category)
+                        <p><a href="{{ route('catLists', $category->id) }}">{{ $category->name }}</a></p>
+                        <hr>
+                    @endforeach
+                </div>
             </div>
 
             <div class="well">
