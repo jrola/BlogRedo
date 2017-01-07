@@ -17,6 +17,12 @@ hr
     margin-top: -5px;
 }
 
+.categoryListSpan
+{
+	float: right;
+	color: #dbdbdb;
+}
+
 .btn-default
 {
 	border-radius: 0px;

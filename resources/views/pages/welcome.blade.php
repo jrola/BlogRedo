@@ -88,7 +88,7 @@
                 <hr>
                 <div class="categoryList">
                     @foreach($data['displayCategory'] as $category)
-                        <p><a href="{{ route('catLists', $category->id) }}">{{ $category->name }}</a></p>
+                        <p><a href="{{ route('catLists', $category->id) }}">{{ $category->name }}</a><span class="categoryListSpan">({{ $category->posts()->count() }})</span></p>
                         <hr>
                     @endforeach
                 </div>
