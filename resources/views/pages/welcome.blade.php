@@ -42,7 +42,7 @@
 
                     <p class="post-comments-title"><span class="glyphicon glyphicon-comment"></span> {{ $post->comments()->count() }} Comments</p>
 
-                    <p><span class="glyphicon glyphicon-time"></span> Published: {{ date('M j, Y g:i a', strtotime($post->created_at)) }}</p>
+                    <p><span class="glyphicon glyphicon-time"></span> Published: {{ date('M j, Y', strtotime($post->created_at)) }}</p>
 
                     <a href="{{ route('blog.single', $post->slug) }}">
                     @if ($post->image === null) 
@@ -51,10 +51,23 @@
                     @endif
                     </a>
                     
-                    <p>{{ substr(strip_tags($post->body), 0, 300) }}{{ strlen(strip_tags($post->body)) > 300 ? "..." : "" }}</p>
+                    <p class="bodyPost">{{ substr(strip_tags($post->body), 0, 295) }}{{ strlen(strip_tags($post->body)) > 295 ? "..." : "" }}</p>
 
                     <a href="{{ route('blog.single', $post->slug) }}" class="btn btn-primary">Read More</a>
-            
+                    
+                    <div class="socialIcons">
+
+                        <a class="facebook" data-toggle="tooltip" href="http://www.facebook.com/sharer.php?u={{ route('blog.single', $post->slug) }}" onclick="window.open(this.href, 'windowName', 'width=600, height=400, left=24, top=24, scrollbars, resizable'); return false;" rel="nofollow" target="_blank" title="" data-original-title="Share on Facebook"><i class="fa fa-facebook-square fa-lg" aria-hidden="true"></i></a>    
+                    
+                        <a class="twitter" data-toggle="tooltip" href="http://twitter.com/share?url={{ route('blog.single', $post->slug) }}" onclick="window.open(this.href, 'windowName', 'width=600, height=400, left=24, top=24, scrollbars, resizable'); return false;" rel="nofollow" target="_blank" title="" data-original-title="Share on Twitter"><i class="fa fa-twitter fa-lg" aria-hidden="true"></i></a>
+
+                        <a class="googleplus" data-toggle="tooltip" href="https://plus.google.com/share?url={{ route('blog.single', $post->slug) }}" onclick="window.open(this.href, 'windowName', 'width=600, height=400, left=24, top=24, scrollbars, resizable'); return false;" rel="nofollow" target="_blank" title="" data-original-title="Share on Google+"><i class="fa fa-google-plus fa-lg" aria-hidden="true"></i></a>
+
+                        <a class="pinterest" data-toggle="tooltip" href="http://pinterest.com/pin/create/button/?url={{ route('blog.single', $post->slug) }}" onclick="window.open(this.href, 'windowName', 'width=600, height=400, left=24, top=24, scrollbars, resizable'); return false;" rel="nofollow" target="_blank" title="" data-original-title="Share on Pinterest"><i class="fa fa-pinterest fa-lg" aria-hidden="true"></i></a>
+
+                        <a class="linkedin" data-toggle="tooltip" href="http://www.linkedin.com/shareArticle?url={{ route('blog.single', $post->slug) }}" onclick="window.open(this.href, 'windowName', 'width=600, height=400, left=24, top=24, scrollbars, resizable'); return false;" rel="nofollow" target="_blank" title="" data-original-title="Share on Linkedin"><i class="fa fa-linkedin-square fa-lg" aria-hidden="true"></i></a>
+
+                    </div>     
                 </div>
             @endforeach
         </div>

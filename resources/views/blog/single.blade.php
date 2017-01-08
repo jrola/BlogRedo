@@ -24,11 +24,20 @@
 			<p>{!! $post->body !!}</p>
 			<hr>
 			<p>Posted In: {{ $post->category->name }}</p>
-			<div class="fb-share-button" data-href="http://icloudpicture.com/nature/winter-trees-nature-snow-wallpaper" data-layout="button" data-size="large" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse">Share</a></div>
+			
+			<div class="socialIcons">
+                      
+	            <a class="facebook" data-toggle="tooltip" href="http://www.facebook.com/sharer.php?u=http://holomatic-soratemplates.blogspot.in/2016/03/full-width-post-without-sidebar.html&amp;title=Full Width Post Without Sidebar" onclick="window.open(this.href, 'windowName', 'width=600, height=400, left=24, top=24, scrollbars, resizable'); return false;" rel="nofollow" target="_blank" title="" data-original-title="Share on Facebook"><i class="fa fa-facebook-square fa-lg" aria-hidden="true"></i></a>   
+	            <a class="twitter" data-toggle="tooltip" href="http://twitter.com/share?url=http://holomatic-soratemplates.blogspot.in/2016/03/full-width-post-without-sidebar.html&amp;title=Full Width Post Without Sidebar" onclick="window.open(this.href, 'windowName', 'width=600, height=400, left=24, top=24, scrollbars, resizable'); return false;" rel="nofollow" target="_blank" title="" data-original-title="Share on Twitter"><i class="fa fa-twitter fa-lg" aria-hidden="true"></i></a>
+
+	            <a class="googleplus" data-toggle="tooltip" href="https://plus.google.com/share?url=http://holomatic-soratemplates.blogspot.in/2016/03/full-width-post-without-sidebar.html&amp;title=Full Width Post Without Sidebar" onclick="window.open(this.href, 'windowName', 'width=600, height=400, left=24, top=24, scrollbars, resizable'); return false;" rel="nofollow" target="_blank" title="" data-original-title="Share on Google+"><i class="fa fa-google-plus fa-lg" aria-hidden="true"></i></a>
+
+	            <a class="pinterest" data-toggle="tooltip" href="http://pinterest.com/pin/create/button/?url=http://holomatic-soratemplates.blogspot.in/2016/03/full-width-post-without-sidebar.html&amp;media=https://1.bp.blogspot.com/-dQBN2UxiXqU/Vupjn7UQgdI/AAAAAAAADY8/y49Bi2v9urM2FcwQqqIA7OmWntqajKusg/s1600/woman-1150067_960_720.jpg&amp;description=Teste Lorem Ipsum is simply dummy text of the printing and typesetting  industry. Lorem Ipsum has be..." onclick="window.open(this.href, 'windowName', 'width=600, height=400, left=24, top=24, scrollbars, resizable'); return false;" rel="nofollow" target="_blank" title="" data-original-title="Share on Pinterest"><i class="fa fa-pinterest fa-lg" aria-hidden="true"></i></a>
+
+	            <a class="linkedin" data-toggle="tooltip" href="http://www.linkedin.com/shareArticle?url=http://holomatic-soratemplates.blogspot.in/2016/03/full-width-post-without-sidebar.html&amp;title=Full Width Post Without Sidebar" onclick="window.open(this.href, 'windowName', 'width=600, height=400, left=24, top=24, scrollbars, resizable'); return false;" rel="nofollow" target="_blank" title="" data-original-title="Share on Linkedin"><i class="fa fa-linkedin-square fa-lg" aria-hidden="true"></i></a>
+  
+           	</div>
 		</div>
-
-
-
 	</div>
 
 	<div class="row">

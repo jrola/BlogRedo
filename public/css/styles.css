@@ -209,7 +209,7 @@ hr
 	border: 1px solid #e3e3e3;
 	margin-bottom: 30px;
 	padding: 20px;
-	box-shadow: 2px 2px 2px rgba(0,0,0,0.1);
+	box-shadow: 1px 1px 1px rgba(0,0,0,0.1);
 	background-color: #fff;
 }
 
@@ -237,6 +237,11 @@ hr
     margin-top: 10px;
     background: #eee;
     padding: 5px 10px;
+}
+
+.bodyPost
+{
+	margin-bottom: 20px;
 }
 
 .blogimage
@@ -300,20 +305,14 @@ hr
 }
 
 
-  .fb-share-button
+.socialIcons
 {
-transform: scale(1.7);
--ms-transform: scale(1.7);
--webkit-transform: scale(1.7);
--o-transform: scale(1.7);
--moz-transform: scale(1.7);
-transform-origin: top left;
--ms-transform-origin: top left;
--webkit-transform-origin: top left;
--moz-transform-origin: top left;
--webkit-transform-origin: top left;
-float: right;
-margin-right: 40px;
-margin-top: -35px;
+	float: right;
 }
 
+.fa
+{
+	color: #dbdbdb;
+	margin-left: 5px;
+	margin-right: 5px;
+}
