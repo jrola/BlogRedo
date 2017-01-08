@@ -73,23 +73,26 @@
         </div>
 
         <div class="col-md-4">
-        <h2 class="page-header">Popular Articles</h2>
+            <h2 class="page-header">Popular Articles</h2>
             <div class="well">
                 <div class="row">
                     <div class="col-md-12">
                         @foreach($data['popularPosts'] as $post)
-                
-                            <h3>
-                                <a href="{{ route('blog.single', $post->slug) }}">{{ $post->title }}</a>
-                            </h3>
-
-                            <a href="{{ route('blog.single', $post->slug) }}">
-                                @if ($post->image === null) 
-                                @else 
-                                    <img class="img-responsive" src="{{ asset('images/' . $post->image) }}"/>
-                                @endif
-                            </a>
-                        
+                            <ul class="media-list main-list">
+                                <li class="media">
+                                    <a class="pull-left" href="{{ route('blog.single', $post->slug) }}">
+                                        @if ($post->image === null) 
+                                        @else 
+                                            <img class="media-object" src="{{ asset('images/' . $post->image) }}">
+                                        @endif
+                                    </a>
+                                    <div class="media-body">
+                                        <a href="{{ route('blog.single', $post->slug) }}">
+                                            <h4 class="media-heading">{{ $post->title }}</h4>
+                                        </a>
+                                    </div>
+                                </li>   
+                            </ul>
                         @endforeach
                     </div>  
                 </div>
