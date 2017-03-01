@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use DB;
+use App\Post;
 
 class QueryController extends Controller
 {
@@ -17,9 +18,9 @@ class QueryController extends Controller
 
     	$this->validate($request, array( 'search' => 'required'));
 
-    	$posts = DB::table('posts')->where('title', 'LIKE', '%' . $query . '%')
+    	$posts = Post::where('title', 'LIKE', '%' . $query . '%')
     							   ->orWhere('body', 'LIKE', '%' . $query . '%')
-    							   ->paginate(10);
+    							   ->paginate();
 
     	// returns a view and passes the view the list of articles and the original query.
     	return view('blog.search', compact('posts', 'query'));

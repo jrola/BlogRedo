@@ -20,105 +20,80 @@
 @section('content')
 
     <div class="row">
-        <div class="col-md-12">
-            {!! Form::open(array('route' => 'queries.search', 'data-parsley-validate' => '', 'class'=>'navbar-form')) !!}
-
-                {!! Form::text('search', null, array('required', 'class'=>'form-control searchForm', 'placeholder'=> 'SEARCH THE FORUM...')) !!}
-                {!! Form::submit('Search',array('class'=>'btn btn-primary', 'required' => '')) !!}
-
-            {!! Form::close() !!}
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-md-8">
-            <h2 class="page-header">Featured Posts</h2>
-
+        <div class="col-lg-8">
             @foreach($data['posts'] as $post)
-                <div class="postContainer">
-                    <h2>
-                        <a href="{{ route('blog.single', $post->slug) }}">{{ $post->title }}</a>
-                    </h2>
-
-                    <p class="post-comments-title"><span class="glyphicon glyphicon-comment"></span> {{ $post->comments()->count() }} Comments</p>
-
-                    <p><span class="glyphicon glyphicon-time"></span> Published: {{ date('M j, Y', strtotime($post->created_at)) }}</p>
-
-                    <a href="{{ route('blog.single', $post->slug) }}">
-                    @if ($post->image === null) 
-                    @else 
-                        <img class="img-responsive" src="{{ asset('images/' . $post->image) }}" />
-                    @endif
-                    </a>
-                    
-                    <p class="bodyPost">{{ substr(strip_tags($post->body), 0, 295) }}{{ strlen(strip_tags($post->body)) > 295 ? "..." : "" }}</p>
-
-                    <a href="{{ route('blog.single', $post->slug) }}" class="btn btn-primary">Read More</a>
-                    
-                    <div class="socialIcons">
-
-                        <a class="facebook" data-toggle="tooltip" href="http://www.facebook.com/sharer.php?u={{ route('blog.single', $post->slug) }}" onclick="window.open(this.href, 'windowName', 'width=600, height=400, left=24, top=24, scrollbars, resizable'); return false;" rel="nofollow" target="_blank" title="" data-original-title="Share on Facebook"><i class="fa fa-facebook-square fa-lg" aria-hidden="true"></i></a>    
-                    
-                        <a class="twitter" data-toggle="tooltip" href="http://twitter.com/share?url={{ route('blog.single', $post->slug) }}" onclick="window.open(this.href, 'windowName', 'width=600, height=400, left=24, top=24, scrollbars, resizable'); return false;" rel="nofollow" target="_blank" title="" data-original-title="Share on Twitter"><i class="fa fa-twitter fa-lg" aria-hidden="true"></i></a>
-
-                        <a class="googleplus" data-toggle="tooltip" href="https://plus.google.com/share?url={{ route('blog.single', $post->slug) }}" onclick="window.open(this.href, 'windowName', 'width=600, height=400, left=24, top=24, scrollbars, resizable'); return false;" rel="nofollow" target="_blank" title="" data-original-title="Share on Google+"><i class="fa fa-google-plus fa-lg" aria-hidden="true"></i></a>
-
-                        <a class="pinterest" data-toggle="tooltip" href="http://pinterest.com/pin/create/button/?url={{ route('blog.single', $post->slug) }}" onclick="window.open(this.href, 'windowName', 'width=600, height=400, left=24, top=24, scrollbars, resizable'); return false;" rel="nofollow" target="_blank" title="" data-original-title="Share on Pinterest"><i class="fa fa-pinterest fa-lg" aria-hidden="true"></i></a>
-
-                        <a class="linkedin" data-toggle="tooltip" href="http://www.linkedin.com/shareArticle?url={{ route('blog.single', $post->slug) }}" onclick="window.open(this.href, 'windowName', 'width=600, height=400, left=24, top=24, scrollbars, resizable'); return false;" rel="nofollow" target="_blank" title="" data-original-title="Share on Linkedin"><i class="fa fa-linkedin-square fa-lg" aria-hidden="true"></i></a>
-
-                    </div>     
-                </div>
+                <article>
+                    <div class="post-image">
+                        <div class="post-heading">
+                            <h3><a href="{{ route('blog.single', $post->slug) }}">{{ $post->title }}</a></h3>
+                        </div>
+                        <a href="{{ route('blog.single', $post->slug) }}">
+                            @if ($post->image === null) 
+                            @else 
+                                <img class="img-responsive" src="{{ asset('images/' . $post->image) }}" />
+                            @endif
+                        </a>
+                    </div>
+                    <p>{{ substr(strip_tags($post->body), 0, 295) }}{{ strlen(strip_tags($post->body)) > 295 ? "..." : "" }}</p>
+                    <div class="bottom-article">
+                        <ul class="meta-post">
+                            <li><a href="#"> {{ date('M j, Y', strtotime($post->created_at)) }}</a></li>
+                            <li><a href="#"> Admin</a></li>
+                            <li><a href="#"> Blog</a></li>
+                            <li><a href="#"> {{ $post->comments()->count() }} Comments</a></li>
+                        </ul>
+                        <a href="{{ route('blog.single', $post->slug) }}" class="pull-right">Continue reading <i class="icon-angle-right"></i></a>
+                    </div>
+                </article>
             @endforeach
         </div>
-
-        <div class="col-md-4">
-            <h2 class="page-header">Popular Articles</h2>
-            <div class="well">
-                <div class="row">
-                    <div class="col-md-12">
-                        @foreach($data['popularPosts'] as $post)
-                            <ul class="media-list main-list">
-                                <li class="media">
-                                    <a class="pull-left" href="{{ route('blog.single', $post->slug) }}">
-                                        @if ($post->image === null) 
-                                        @else 
-                                            <img class="media-object" src="{{ asset('images/' . $post->image) }}">
-                                        @endif
-                                    </a>
-                                    <div class="media-body">
-                                        <a href="{{ route('blog.single', $post->slug) }}">
-                                            <h4 class="media-heading">{{ $post->title }}</h4>
-                                        </a>
-                                    </div>
-                                </li>   
-                            </ul>
+        <div class="col-lg-4">
+            <aside class="right-sidebar">
+                <div class="widget">
+                    {!! Form::open(array('route' => 'queries.search', 'data-parsley-validate' => '', 'class'=>'form-search')) !!}
+                        {!! Form::text('search', null, array('required', 'class'=>'form-control searchForm', 'placeholder'=> 'Search..')) !!}
+                    {!! Form::close() !!}
+                </div>
+                <div class="widget">
+                    <h5 class="widgetheading">Categories</h5>
+                    <ul class="cat">
+                        @foreach($data['displayCategory'] as $category)
+                            <li><a href="{{ route('catLists', $category->id) }}">{{ $category->name }}</a> ({{ $category->posts()->count() }})</li>
                         @endforeach
-                    </div>  
+                        
+                    </ul>
                 </div>
-            </div>
-
-            <!-- Side Widget Well -->
-            <div class="well">
-                <h4>Categories</h4>
-                <hr>
-                <div class="categoryList">
-                    @foreach($data['displayCategory'] as $category)
-                        <p><a href="{{ route('catLists', $category->id) }}">{{ $category->name }}</a><span class="categoryListSpan">({{ $category->posts()->count() }})</span></p>
-                        <hr>
-                    @endforeach
+                <div class="widget">
+                    <h5 class="widgetheading">Latest posts</h5>
+                    <ul class="recent">
+                        @foreach($data['popularPosts'] as $post)
+                        <li>
+                            <a class="pull-left" href="{{ route('blog.single', $post->slug) }}">
+                                @if ($post->image === null) 
+                                @else 
+                                    <img class="media-object" src="{{ asset('images/' . $post->image) }}">
+                                    @endif
+                                </a>
+                            <h6><a href="{{ route('blog.single', $post->slug) }}">{{ $post->title }}</a></h6>
+                            <p>
+                                {{ substr(strip_tags($post->body), 0, 70) }}{{ strlen(strip_tags($post->body)) > 70 ? "..." : "" }}
+                            </p>
+                        </li>
+                        @endforeach
+                    </ul>
                 </div>
-            </div>
-
-            <div class="well">
-                <h4>Tags</h4>
-                <hr>
-                @foreach ($data['tags'] as $tag)
-                    <a class="label label-default" href="{{ route('tagLists', $tag->id) }}">{{ $tag->name }}</a>
-                @endforeach
-            </div>
+                <div class="widget">
+                    <h5 class="widgetheading">Popular tags</h5>
+                    <ul class="tags">
+                        @foreach ($data['tags'] as $tag)
+                            <li><a href="{{ route('tagLists', $tag->id) }}">{{ $tag->name }}</a></li>
+                        @endforeach
+                    </ul>
+                </div>
+            </aside>
         </div>
     </div>
+
 
  <a href="/blog" class="btn btn-default btn-block btnMorePosts">View All Posts >></a>
 
@@ -134,3 +109,4 @@
     </script>
 
 @endsection
+
