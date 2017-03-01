@@ -13,15 +13,16 @@
 
 			<div class="col-md-4 col-sm-6">
 				<div class="blog-post">
-				
+					<a href="{{ route('blog.single', $post->slug) }}" title="Show Comments">
 					<div class="post-info">
 						<div class="post-date">
 							<div class="date">{{ date('M j, Y', strtotime($post->created_at)) }}</div>
 						</div>
 						<div class="post-comments-count">
-							<a href="page-blog-post-right-sidebar.html" title="Show Comments"><i class="glyphicon glyphicon-comment icon-white"></i>{{ $post->comments()->count() }}</a>
+							<i class="glyphicon glyphicon-comment icon-white"></i>{{ $post->comments()->count() }}
 						</div>
 					</div>
+					</a>
 				
 					@if ($post->image === null) 
 					@else 

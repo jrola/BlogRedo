@@ -42,7 +42,7 @@
                             <li><a href="#"> Blog</a></li>
                             <li><a href="#"> {{ $post->comments()->count() }} Comments</a></li>
                         </ul>
-                        <a href="{{ route('blog.single', $post->slug) }}" class="pull-right">Continue reading <i class="icon-angle-right"></i></a>
+                        <a href="{{ route('blog.single', $post->slug) }}" class="pull-right btn btn-primary">Continue reading <i class="icon-angle-right"></i></a>
                     </div>
                 </article>
             @endforeach
@@ -51,7 +51,7 @@
             <aside class="right-sidebar">
                 <div class="widget">
                     {!! Form::open(array('route' => 'queries.search', 'data-parsley-validate' => '', 'class'=>'form-search')) !!}
-                        {!! Form::text('search', null, array('required', 'class'=>'form-control searchForm', 'placeholder'=> 'Search..')) !!}
+                        {!! Form::text('search', null, array('required', 'class'=>'form-control', 'placeholder'=> 'Search..')) !!}           
                     {!! Form::close() !!}
                 </div>
                 <div class="widget">
@@ -59,12 +59,11 @@
                     <ul class="cat">
                         @foreach($data['displayCategory'] as $category)
                             <li><a href="{{ route('catLists', $category->id) }}">{{ $category->name }}</a> ({{ $category->posts()->count() }})</li>
-                        @endforeach
-                        
+                        @endforeach          
                     </ul>
                 </div>
                 <div class="widget">
-                    <h5 class="widgetheading">Latest posts</h5>
+                    <h5 class="widgetheading">Popular posts</h5>
                     <ul class="recent">
                         @foreach($data['popularPosts'] as $post)
                         <li>
