@@ -24,7 +24,7 @@
 					@endforeach
 				</tbody>
 			</table>
-		</div> <!-- end of .col-md-8 -->
+		</div>
 
 		<div class="col-md-3">
 			<div class="well">

@@ -5,7 +5,7 @@
 @section('content')
 	
 	<div class="row">
-		<div id="registerbox" style=" margin-top:15%; margin-bottom: 15%;" class="mainbox col-md-6 col-md-offset-3">
+		<div id="registerbox" style=" margin-top:5%;" class="mainbox col-md-6 col-md-offset-3">
 	        <div class="panel panel-info">
 	            <div class="panel-heading">
 	                <div class="panel-title">Register</div>
